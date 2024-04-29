@@ -20,6 +20,8 @@ ASTRA_DB_CLIENT_ID = os.environ.get('ASTRA_DB_CLIENT_ID')
 ASTRA_DB_APPLICATION_TOKEN = os.environ.get('ASTRA_DB_APPLICATION_TOKEN')
 CHAIN_SESSION_KEY = 'user_chain'
 
+
+
 model_name = 'sentence-transformers/paraphrase-multilingual-mpnet-base-v2'
 model_kwargs = {'device': 'cpu'}
 encode_kwargs = {'normalize_embeddings': False}
