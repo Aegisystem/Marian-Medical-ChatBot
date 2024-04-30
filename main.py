@@ -1,9 +1,13 @@
-from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.schema import StrOutputParser
 from langchain.schema.runnable import Runnable
 from langchain.schema.runnable.config import RunnableConfig
+
+from cassandra.cluster import Cluster
+
+
 
 import chainlit as cl
 
@@ -14,10 +18,8 @@ embeddings = HuggingFaceEmbeddings (
   model_name=model_name,
   model_kwargs=model_kwargs,
   encode_kwargs=encode_kwargs
-)
-
-def open_db_connection():
-    cluster = Cluster(['cassandra'])
+)    
+    
 
 @cl.on_chat_start
 async def on_chat_start():
